@@ -1,0 +1,38 @@
+.quadro-opcoes {
+    flex: 1;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.opcoes{
+    padding-top: 15px;
+}
+
+.local-div{
+    padding-left: 15px;
+}
+
+.local{
+    position: absolute;
+    top: 12.5%;
+    font-size: medium;
+    background-color: rgb(123, 123, 123);
+}
+
+.opcoes-menu.esconder {
+    display: none;
+}
+
+.op1,
+.op2,
+.op3,
+.opVoltar {
+    padding-left: 10px;
+}
+
+.op1:hover,
+.op2:hover,
+.op3:hover,
+.opVoltar:hover {
+    cursor: pointer;
+    background-color: rgb(123, 123, 123);
+}

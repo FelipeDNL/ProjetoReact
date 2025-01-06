@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  gap: 10px;
+  height: 85vh; /* Altura relativa à altura da viewport */
+  min-height: 200px; /* Altura mínima para telas menores */
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.QuadroOpcoes {
+  flex: 1;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.quadro2 {
+  flex: 3;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.op1:hover{
+  background-color: rgb(123, 123, 123);
+  cursor: pointer;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto; /* Ajusta a altura automaticamente */
+  }
+
+  .quadro1, .quadro2 {
+    flex: none;
+    width: 100%;
+  }
+}
