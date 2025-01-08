@@ -25,16 +25,17 @@ function QuadroOpcoes({ setOpcaoSelecionada }) {
                 <div className={`opcoes-menu ${esconderMenu ? 'esconder' : ''}`}>
                     <div className='op1' onClick={() => setOpcaoSelecionada('bemVindo.html')}>bemVindo.html</div>
                     <div className='op2' onClick={() => setOpcaoSelecionada('sobre.html')}>sobre.html</div>
-                    <Link
-                        to='/projetos'
-                        className='op3'
-                        onClick={() => {
-                            setOpcaoSelecionada('projetos');
-                            setEsconderMenu(true);
-                            setUpdateLocal('projetos');
-                        }}>
-                        /projetos
-                    </Link>
+                    <div className='op3'>
+                        <Link
+                            to='/projetos'
+                            onClick={() => {
+                                setOpcaoSelecionada('projetos');
+                                setEsconderMenu(true);
+                                setUpdateLocal('projetos');
+                            }}>
+                            /projetos
+                        </Link>
+                    </div>
                 </div>
 
                 {esconderMenu &&
@@ -42,6 +43,7 @@ function QuadroOpcoes({ setOpcaoSelecionada }) {
                         onClick={() => {
                             handleVoltar();
                             setUpdateLocal('');
+                            setOpcaoSelecionada('');
                         }}>
                         ...<small>(voltar)</small>
                     </div>

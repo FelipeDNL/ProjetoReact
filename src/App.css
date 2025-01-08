@@ -2,7 +2,7 @@
   display: flex;
   gap: 10px;
   height: 85vh; /* Altura relativa à altura da viewport */
-  min-height: 200px; /* Altura mínima para telas menores */
+  min-height: 600px; /* Altura mínima para telas menores */
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -31,6 +31,6 @@
 
   .quadro1, .quadro2 {
     flex: none;
-    width: 100%;
+    width: 80%;
   }
 }

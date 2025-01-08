@@ -9,13 +9,14 @@
 
 .local-div{
     padding-left: 15px;
+    border-color: red;
 }
 
 .local{
     position: absolute;
     top: 12.5%;
     font-size: medium;
-    background-color: rgb(123, 123, 123);
+    border-color: blue;
 }
 
 .opcoes-menu.esconder {
@@ -35,4 +36,9 @@
 .opVoltar:hover {
     cursor: pointer;
     background-color: rgb(123, 123, 123);
+}
+
+a:-webkit-any-link {
+    color: rgba(255, 255, 255, 0.87);;
+    text-decoration: underline;
 }
