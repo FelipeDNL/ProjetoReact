@@ -7,14 +7,3 @@
     padding-left: 10px;
     padding-top: 15px;
 }
-
-.local-div{
-    padding-left: 15px;
-}
-
-.local{
-    position: absolute;
-    top: 11.5%;
-    font-size: medium;
-    background-color: rgb(123, 123, 123);
-}

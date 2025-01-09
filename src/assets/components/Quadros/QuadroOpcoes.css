@@ -1,22 +1,21 @@
 .quadro-opcoes {
     flex: 1;
+    position: relative;
     border: 2px solid rgb(255, 255, 255);
 }
 
-.opcoes{
-    padding-top: 15px;
-}
-
 .local-div{
-    padding-left: 15px;
-    border-color: red;
+    display: flex;
+    background-color: rgb(78, 78, 78);
+    padding-left: 5px;
 }
 
 .local{
-    position: absolute;
-    top: 12.5%;
-    font-size: medium;
-    border-color: blue;
+    background-color: rgb(78, 78, 78);
+}
+
+.opcoes{
+    padding-top: 0px;
 }
 
 .opcoes-menu.esconder {
