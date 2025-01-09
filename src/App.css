@@ -1,7 +1,7 @@
 .container {
   display: flex;
   gap: 10px;
-  height: 85vh; /* Altura relativa à altura da viewport */
+  height: 80vh; /* Altura relativa à altura da viewport */
   min-height: 600px; /* Altura mínima para telas menores */
   padding-left: 3%;
   padding-right: 3%;

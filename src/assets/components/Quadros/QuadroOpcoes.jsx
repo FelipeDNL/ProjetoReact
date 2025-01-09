@@ -7,6 +7,8 @@ function QuadroOpcoes({ setOpcaoSelecionada }) {
     const [esconderMenu, setEsconderMenu] = useState(false);
     const [updateLocal, setUpdateLocal] = useState('');
 
+    
+
     const handleVoltar = () => {
         setEsconderMenu(false);
         navigate(-1); // Volta para a página anterior
@@ -23,8 +25,8 @@ function QuadroOpcoes({ setOpcaoSelecionada }) {
 
             <div className='opcoes'>
                 <div className={`opcoes-menu ${esconderMenu ? 'esconder' : ''}`}>
-                    <div className='op1' onClick={() => setOpcaoSelecionada('bemVindo.html')}>bemVindo.html</div>
-                    <div className='op2' onClick={() => setOpcaoSelecionada('sobre.html')}>sobre.html</div>
+                    <div className='op1' onClick={() => setOpcaoSelecionada('bemVindo.html')}>/bemVindo.html</div>
+                    <div className='op2' onClick={() => setOpcaoSelecionada('sobre.html')}>/sobre.html</div>
                     <div className='op3'>
                         <Link
                             to='/projetos'

@@ -3,7 +3,43 @@
     border: 2px solid rgb(255, 255, 255);
 }
 
-.mostrar{
+.local-div-mostrar {
+    display: flex;
+    background-color: rgb(78, 78, 78);
+    padding-left: 5px;
+}
+
+.local-mostrar {
+    background-color: rgb(78, 78, 78);
+}
+
+.mostrar {
     padding-left: 10px;
-    padding-top: 15px;
+    padding-top: 5px;
+    overflow: auto;
+    word-wrap: break-word;
+    height: 95.5%;
+}
+
+.mostrar::-webkit-scrollbar {
+    width: 15px;
+    height: 8px;
+    background-color: #aaa;
+    /* or add it to the track */
+}
+
+/* Add a thumb */
+.mostrar::-webkit-scrollbar-thumb {
+    background: rgb(77, 77, 77);
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .local-div-mostrar {
+        font-size: small;
+    }
+
+    .mostrar {
+        font-size: medium;
+        padding-left: 5px;
+    }
 }

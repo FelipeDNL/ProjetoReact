@@ -41,3 +41,9 @@ a:-webkit-any-link {
     color: rgba(255, 255, 255, 0.87);;
     text-decoration: underline;
 }
+
+@media (min-width: 320px) and (max-width: 425px){
+    .quadro-opcoes{
+        font-size: small;
+    }
+}

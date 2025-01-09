@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: baseline;
     padding: 10px 80px;
-    padding-left: 5%;
+    padding-left: 4%;
 }
 
 .opcoes-header {
@@ -26,7 +26,6 @@
 .titulo-header{
     display: flex;
     align-items: baseline;
-    
 }
 
 .quadrado{
@@ -40,4 +39,30 @@
         background-color: white;
         visibility: hidden;
     }
+}
+
+@media (min-width: 1px) and (max-width: 727px) {
+    .header-container{
+        flex-direction: column;
+        padding: 0px 0px;
+        align-items: center;
+    }
+
+    .titulo-header{
+        font-size: larger;
+    }
+
+    .opcoes-header{
+        gap: 10px;
+        font-size: small;
+    }
+    
+}
+
+@media (min-width: 728px) and (max-width: 1024px) {
+    .header-container{
+        font-size: medium;
+        padding-right: 40px;
+    }
+    
 }
