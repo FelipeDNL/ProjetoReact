@@ -22,18 +22,21 @@
     display: none;
 }
 
-.op1,
-.op2,
-.op3,
-.opVoltar {
+#op1,
+#op2, 
+#op3,
+#opVoltar {
     padding-left: 10px;
 }
 
-.op1:hover,
-.op2:hover,
-.op3:hover,
-.opVoltar:hover {
-    cursor: pointer;
+#op1:hover,
+#op2:hover,
+#op3:hover,
+#opVoltar:hover {
+    background-color: rgb(123, 123, 123);
+}
+
+.selected{
     background-color: rgb(123, 123, 123);
 }
 
