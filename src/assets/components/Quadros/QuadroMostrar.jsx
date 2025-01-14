@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import './QuadroMostrar.css'
+
 import BemVindo from '../BemVindo/BemVindo.jsx'
+import Sobre from '../Sobre/Sobre.jsx'
+import Projetos from '../Projetos/Projetos.jsx'
 
 function QuadroMostrar({ opcaoSelecionada }) {
 
@@ -17,8 +20,8 @@ function QuadroMostrar({ opcaoSelecionada }) {
 
       <div className='mostrar'>
         {opcaoMostrar === 'bemVindo.html' && <div className='bem-vindo'> <BemVindo /> </div>}
-        {opcaoMostrar === 'sobre.html' && <div className='sobre'> Sobre </div>}
-        {opcaoMostrar === 'projetos' && <div className='projetos'> Projetos </div>}
+        {opcaoMostrar === 'sobre.html' && <div className='sobre'> <Sobre /> </div>}
+        {opcaoMostrar === 'projetos' && <div className='projetos'> <Projetos /> </div>}
       </div>
     </div>
   )

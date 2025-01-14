@@ -14,32 +14,6 @@
     background-color: rgb(78, 78, 78);
 }
 
-.opcoes{
-    padding-top: 0px;
-}
-
-.opcoes-menu.esconder {
-    display: none;
-}
-
-#op1,
-#op2, 
-#op3,
-#opVoltar {
-    padding-left: 10px;
-}
-
-#op1:hover,
-#op2:hover,
-#op3:hover,
-#opVoltar:hover {
-    background-color: rgb(123, 123, 123);
-}
-
-.selected{
-    background-color: rgb(123, 123, 123);
-}
-
 a:-webkit-any-link {
     color: rgba(255, 255, 255, 0.87);;
     text-decoration: underline;

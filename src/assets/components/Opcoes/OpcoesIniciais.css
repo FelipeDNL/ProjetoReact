@@ -1,0 +1,22 @@
+.selected {
+    background-color: rgb(120, 120, 120);
+}
+
+.op1,
+.op2,
+.op3 {
+    padding-left: 10px;
+}
+
+.op1:hover,
+.op2:hover,
+.op3:hover {
+    background-color: rgb(123, 123, 123);
+    cursor: pointer;
+}
+
+.op1:active,
+.op2:active,
+.op3:active {
+    background-color: rgb(163, 162, 162);
+}
