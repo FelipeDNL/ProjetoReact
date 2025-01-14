@@ -7,15 +7,20 @@ import QuadroMostrar from './assets/components/Quadros/QuadroMostrar.jsx'
 import QuadroOpcoes from './assets/components/Quadros/QuadroOpcoes.jsx'
 
 function App() {
-  const [opcaoSelecionada, setOpcaoSelecionada] = useState('')
+  const [opcaoSelecionada, setOpcaoSelecionada] = useState('');
+  const [projetoSelecionado, setProjetoSelecionado] = useState('');
 
   return (
     <>
       <Header />
       <div className='container'>
-        <QuadroOpcoes setOpcaoSelecionada={setOpcaoSelecionada} />
+        <QuadroOpcoes 
+        setOpcaoSelecionada={setOpcaoSelecionada} 
+        setProjetoSelecionado={setProjetoSelecionado}
+        
+        />
+        
         <Routes>
-
           <Route
             path='/'
             element={
@@ -28,7 +33,9 @@ function App() {
           <Route
             path='/projetos'
             element={
-              <QuadroMostrar opcaoSelecionada='projetos'
+              <QuadroMostrar
+                opcaoSelecionada={opcaoSelecionada}
+                projetoSelecionado={projetoSelecionado}
               />
             }
           />

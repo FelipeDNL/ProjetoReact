@@ -5,23 +5,22 @@ import './QuadroOpcoes.css'
 import OpcoesProjetos from '../Opcoes/OpcoesProjetos'
 import OpcoesIniciais from '../Opcoes/OpcoesIniciais'
 
-function QuadroOpcoes({ setOpcaoSelecionada }) {
+function QuadroOpcoes({ setOpcaoSelecionada, setProjetoSelecionado }) {
     const navigate = useNavigate();
     const location = useLocation();
-    const [updateLocal, setUpdateLocal] = useState('');
 
     return (
         <div className='quadro-opcoes'>
 
             <div className='local-div'>
                 <div className='local'>
-                    C:/{updateLocal}
+                    C:{location.pathname}
                 </div>
             </div>
 
             <div className='opcoes'>
                 {location.pathname === '/projetos' ? (
-                    <OpcoesProjetos setOpcaoSelecionada={setOpcaoSelecionada} />
+                    <OpcoesProjetos setProjetoSelecionado={setProjetoSelecionado} />
                 ) : (
                     <OpcoesIniciais setOpcaoSelecionada={setOpcaoSelecionada} />
                 )}

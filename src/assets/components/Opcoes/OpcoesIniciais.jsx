@@ -25,7 +25,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
         <div className='opcoes-iniciais'>
             <div
                 className={`op1 ${numSelecionado === 0 ? 'selected' : ''}`}
-                onClick={() => setOpcaoSelecionada('bemVindo.html')}
+                onClick={() => {setOpcaoSelecionada('bemVindo.html'), setUpdateLocal('projetos')} }
                 onMouseEnter={() => setNumSelecionado(0)}
             >
                 /bemVindo.html
@@ -39,13 +39,15 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
                 /sobreMim.html
             </div>
 
-            <div
-                className={`op3 ${numSelecionado === 2 ? 'selected' : ''}`}
-                onClick={() => setOpcaoSelecionada('projetos')}
-                onMouseEnter={() => setNumSelecionado(2)}
-            >
-                <Link to='/projetos'> /meusProjetos </Link>
-            </div>
+            <Link to='/projetos'>
+                <div
+                    className={`op3 ${numSelecionado === 2 ? 'selected' : ''}`}
+                    onClick={() => setOpcaoSelecionada('projetos')}
+                    onMouseEnter={() => setNumSelecionado(2)}
+                >
+                    /meusProjetos
+                </div>
+            </Link>
         </div>
     )
 }

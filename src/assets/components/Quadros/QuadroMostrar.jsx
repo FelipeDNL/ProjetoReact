@@ -5,7 +5,7 @@ import BemVindo from '../BemVindo/BemVindo.jsx'
 import Sobre from '../Sobre/Sobre.jsx'
 import Projetos from '../Projetos/Projetos.jsx'
 
-function QuadroMostrar({ opcaoSelecionada }) {
+function QuadroMostrar({ opcaoSelecionada, projetoSelecionado }) {
 
   const opcaoMostrar = opcaoSelecionada || 'bemVindo.html';
 
@@ -21,7 +21,11 @@ function QuadroMostrar({ opcaoSelecionada }) {
       <div className='mostrar'>
         {opcaoMostrar === 'bemVindo.html' && <div className='bem-vindo'> <BemVindo /> </div>}
         {opcaoMostrar === 'sobre.html' && <div className='sobre'> <Sobre /> </div>}
-        {opcaoMostrar === 'projetos' && <div className='projetos'> <Projetos /> </div>}
+        {opcaoMostrar === 'projetos' && (
+          <div className='projetos'>
+            <Projetos projetoSelecionado={projetoSelecionado} />
+          </div>
+        )}
       </div>
     </div>
   )

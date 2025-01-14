@@ -19,8 +19,22 @@ a:-webkit-any-link {
     text-decoration: underline;
 }
 
-@media (min-width: 320px) and (max-width: 425px){
+.quadro-opcoes::-webkit-scrollbar {
+    width: 15px;
+    height: 8px;
+    background-color: #aaa;
+    /* or add it to the track */
+}
+
+/* Add a thumb */
+.quadro-opcoes::-webkit-scrollbar-thumb {
+    background: rgb(77, 77, 77);
+}
+
+@media (min-width: 320px) and (max-width: 769px){
     .quadro-opcoes{
-        font-size: small;
+        flex: 1;
+        font-size: medium;
+        max-height: 240px;
     }
 }
