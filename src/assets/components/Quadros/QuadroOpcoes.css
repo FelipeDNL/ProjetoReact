@@ -14,11 +14,6 @@
     background-color: rgb(78, 78, 78);
 }
 
-a:-webkit-any-link {
-    color: rgba(255, 255, 255, 0.87);;
-    text-decoration: underline;
-}
-
 .quadro-opcoes::-webkit-scrollbar {
     width: 15px;
     height: 8px;

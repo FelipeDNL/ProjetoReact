@@ -12,6 +12,11 @@
   border: 2px solid rgb(255, 255, 255);
 }
 
+a:-webkit-any-link {
+  color: rgba(255, 255, 255, 0.87);;
+  text-decoration: none;
+}
+
 /* Media query para telas menores */
 @media (max-width: 769px) {
   .container {

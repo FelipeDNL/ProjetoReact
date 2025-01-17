@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './OpcoesProjetos.css'
 import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado';
+import { Link } from 'react-router-dom';
 
 function OpcoesProjetos({ setProjetoSelecionado }) {
     const [numSelecionado, setNumSelecionado] = useState(0);
@@ -15,30 +16,40 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
         }
     }
 
-    usarNavegacaoTeclado(3, usarTeclado, numSelecionado, setNumSelecionado);
+    usarNavegacaoTeclado(4, usarTeclado, numSelecionado, setNumSelecionado);
 
     return (
         <>
+            <Link to='/'>
+                <div
+                    className={`opVoltar ${numSelecionado === 0 ? 'selected' : ''}`}
+                    onClick={() => setProjetoSelecionado('projeto1.html')}
+                    onMouseEnter={() => setNumSelecionado(0)}
+                >
+                    ...<small>(voltar)</small>
+                </div>
+            </Link>
+            
             <div
-                className={`op1 ${numSelecionado === 0 ? 'selected' : ''}`}
+                className={`op1 ${numSelecionado === 1 ? 'selected' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto1.html')}
-                onMouseEnter={() => setNumSelecionado(0)}
+                onMouseEnter={() => setNumSelecionado(1)}
             >
                 /projeto1.html
             </div>
 
             <div
-                className={`op2 ${numSelecionado === 1 ? 'selected' : ''}`}
+                className={`op2 ${numSelecionado === 2 ? 'selected' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto2.html')}
-                onMouseEnter={() => setNumSelecionado(1)}
+                onMouseEnter={() => setNumSelecionado(2)}
             >
                 /projeto2.html
             </div>
 
             <div
-                className={`op3 ${numSelecionado === 2 ? 'selected' : ''}`}
+                className={`op3 ${numSelecionado === 3 ? 'selected' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto3.html')}
-                onMouseEnter={() => setNumSelecionado(2)}
+                onMouseEnter={() => setNumSelecionado(3)}
             >
                 /projeto3.html
             </div>

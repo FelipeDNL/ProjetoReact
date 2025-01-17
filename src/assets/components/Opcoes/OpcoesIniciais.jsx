@@ -25,7 +25,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
         <div className='opcoes-iniciais'>
             <div
                 className={`op1 ${numSelecionado === 0 ? 'selected' : ''}`}
-                onClick={() => {setOpcaoSelecionada('bemVindo.html'), setUpdateLocal('projetos')} }
+                onClick={() => setOpcaoSelecionada('bemVindo.html')}
                 onMouseEnter={() => setNumSelecionado(0)}
             >
                 /bemVindo.html
