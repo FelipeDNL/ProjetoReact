@@ -10,6 +10,11 @@
     padding-left: 10px;
 }
 
+.opJava,
+.opPython{
+    padding-left: 10px;
+}
+
 .opVoltar:hover{
     background-color: rgb(120, 120, 120);
 }

@@ -14,12 +14,11 @@ function App() {
     <>
       <Header />
       <div className='container'>
-        <QuadroOpcoes 
-        setOpcaoSelecionada={setOpcaoSelecionada} 
-        setProjetoSelecionado={setProjetoSelecionado}
-        
+        <QuadroOpcoes
+          setOpcaoSelecionada={setOpcaoSelecionada}
+          setProjetoSelecionado={setProjetoSelecionado}
         />
-        
+
         <Routes>
           <Route
             path='/'
@@ -39,6 +38,27 @@ function App() {
               />
             }
           />
+
+          <Route
+            path='/projetos/python'
+            element={
+              <QuadroMostrar
+                opcaoSelecionada='projetos/python'
+                projetoSelecionado={projetoSelecionado}
+              />
+            }
+          />
+
+          <Route
+            path='/projetos/java'
+            element={
+              <QuadroMostrar
+                opcaoSelecionada='projetos/java'
+                projetoSelecionado={projetoSelecionado}
+              />
+            }
+          />
+
         </Routes>
 
       </div>

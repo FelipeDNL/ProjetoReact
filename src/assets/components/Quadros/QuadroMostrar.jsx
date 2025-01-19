@@ -4,28 +4,32 @@ import './QuadroMostrar.css'
 import BemVindo from '../BemVindo/BemVindo.jsx'
 import Sobre from '../Sobre/Sobre.jsx'
 import Projetos from '../Projetos/Projetos.jsx'
+import ProjetosPython from '../Projetos/ProjetosPython.jsx'
+import ProjetosJava from '../Projetos/ProjetosJava.jsx'
 
 function QuadroMostrar({ opcaoSelecionada, projetoSelecionado }) {
 
-  const opcaoMostrar = opcaoSelecionada || 'bemVindo.html';
+  const opcaoSelecionadaMostrar = opcaoSelecionada || 'bemVindo.html';
+
+  const opcaoSelecionadaMap = {
+    'bemVindo.html': <BemVindo />,
+    'sobre.html': <Sobre/>,
+    'projetos': <Projetos projetoSelecionado={projetoSelecionado} />,
+    'projetos/python': <ProjetosPython projetoSelecionado={projetoSelecionado} />,
+    'projetos/java': <ProjetosJava projetoSelecionado={projetoSelecionado} />,
+  }
 
   return (
     <div className='quadro-mostrar'>
 
       <div className='local-div-mostrar'>
         <div className='local-mostrar'>
-          /users/Felipe/{opcaoMostrar}
+          /users/Felipe/{projetoSelecionado} 
         </div>
       </div>
 
       <div className='mostrar'>
-        {opcaoMostrar === 'bemVindo.html' && <div className='bem-vindo'> <BemVindo /> </div>}
-        {opcaoMostrar === 'sobre.html' && <div className='sobre'> <Sobre /> </div>}
-        {opcaoMostrar === 'projetos' && (
-          <div className='projetos'>
-            <Projetos projetoSelecionado={projetoSelecionado} />
-          </div>
-        )}
+        {opcaoSelecionadaMap[opcaoSelecionada] || <BemVindo />}
       </div>
     </div>
   )

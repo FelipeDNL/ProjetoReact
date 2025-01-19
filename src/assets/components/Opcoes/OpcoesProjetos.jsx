@@ -16,7 +16,7 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
         }
     }
 
-    usarNavegacaoTeclado(4, usarTeclado, numSelecionado, setNumSelecionado);
+    usarNavegacaoTeclado(6, usarTeclado, numSelecionado, setNumSelecionado);
 
     return (
         <>
@@ -29,7 +29,7 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
                     ...<small>(voltar)</small>
                 </div>
             </Link>
-            
+
             <div
                 className={`op1 ${numSelecionado === 1 ? 'selected' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto1.html')}
@@ -53,6 +53,24 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
             >
                 /projeto3.html
             </div>
+
+            <Link to='/projetos/python'>
+                <div
+                    className={`opPython ${numSelecionado === 4 ? 'selected' : ''}`}
+                    onMouseEnter={() => setNumSelecionado(4)}
+                >
+                    /python
+                </div>
+            </Link>
+
+            <Link to='/projetos/java'>
+                <div
+                    className={`opJava ${numSelecionado === 5 ? 'selected' : ''}`}
+                    onMouseEnter={() => setNumSelecionado(5)}
+                >
+                    /java
+                </div>
+            </Link>
         </>
     )
 }

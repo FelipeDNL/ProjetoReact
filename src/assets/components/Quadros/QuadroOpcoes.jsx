@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 import './QuadroOpcoes.css'
 
 import OpcoesProjetos from '../Opcoes/OpcoesProjetos'
 import OpcoesIniciais from '../Opcoes/OpcoesIniciais'
+import OpcoesProjetosPython from '../Opcoes/OpcoesProjetosPython'
+import OpcoesProjetosJava from '../Opcoes/OpcoesProjetosJava'
 
 function QuadroOpcoes({ setOpcaoSelecionada, setProjetoSelecionado }) {
-    const navigate = useNavigate();
     const location = useLocation();
+
+    const opcoesMap ={
+        '/': <OpcoesIniciais setOpcaoSelecionada={setOpcaoSelecionada} />,
+        '/projetos': <OpcoesProjetos setProjetoSelecionado={setProjetoSelecionado} />,
+        '/projetos/python': <OpcoesProjetosPython setProjetoSelecionado={setProjetoSelecionado} />,
+        '/projetos/java': <OpcoesProjetosJava setProjetoSelecionado={setProjetoSelecionado} />
+    }
 
     return (
         <div className='quadro-opcoes'>
@@ -19,11 +27,7 @@ function QuadroOpcoes({ setOpcaoSelecionada, setProjetoSelecionado }) {
             </div>
 
             <div className='opcoes'>
-                {location.pathname === '/projetos' ? (
-                    <OpcoesProjetos setProjetoSelecionado={setProjetoSelecionado} />
-                ) : (
-                    <OpcoesIniciais setOpcaoSelecionada={setOpcaoSelecionada} />
-                )}
+                {opcoesMap[location.pathname] || <OpcoesIniciais setOpcaoSelecionada={setOpcaoSelecionada} />}
             </div>
 
         </div>
