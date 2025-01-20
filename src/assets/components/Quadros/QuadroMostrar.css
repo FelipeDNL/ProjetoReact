@@ -16,6 +16,7 @@
 .mostrar {
     padding-left: 10px;
     padding-top: 5px;
+    padding-right: 5px;
     overflow: auto;
     word-wrap: break-word;
     height: 95.5%;

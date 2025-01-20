@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function OpcoesProjetosJava({ setProjetoSelecionado }) {
+    const navigate = useNavigate();
     const [numSelecionado, setNumSelecionado] = useState(0);
 
     const usarTeclado = (index) => {
         if (index === 0) {
-            setProjetoSelecionado('projetoJava1.html');
+            navigate(-1);
         } else if (index === 1) {
-            setProjetoSelecionado('projetoJava2.html');
+            setProjetoSelecionado('projetoJava1');
         } else if (index === 2) {
-            setProjetoSelecionado('projetoJava3.html');
+            setProjetoSelecionado('projetoJava2');
+        } else if (index === 3) {
+            setProjetoSelecionado('projetoJava3');
         }
     }
 
@@ -31,7 +34,7 @@ function OpcoesProjetosJava({ setProjetoSelecionado }) {
             
             <div
                 className={`op1 ${numSelecionado === 1 ? 'selected' : ''}`}
-                onClick={() => setProjetoSelecionado('projetoJava1.html')}
+                onClick={() => setProjetoSelecionado('projetoJava1')}
                 onMouseEnter={() => setNumSelecionado(1)}
             >
                 /projetoJava1.html
@@ -39,7 +42,7 @@ function OpcoesProjetosJava({ setProjetoSelecionado }) {
 
             <div
                 className={`op2 ${numSelecionado === 2 ? 'selected' : ''}`}
-                onClick={() => setProjetoSelecionado('projetoJava2.html')}
+                onClick={() => setProjetoSelecionado('projetoJava2')}
                 onMouseEnter={() => setNumSelecionado(2)}
             >
                 /projetoJava2.html
@@ -47,7 +50,7 @@ function OpcoesProjetosJava({ setProjetoSelecionado }) {
 
             <div
                 className={`op3 ${numSelecionado === 3 ? 'selected' : ''}`}
-                onClick={() => setProjetoSelecionado('projetoJava3.html')}
+                onClick={() => setProjetoSelecionado('projetoJava3')}
                 onMouseEnter={() => setNumSelecionado(3)}
             >
                 /projetoJava3.html

@@ -9,12 +9,10 @@ const usarNavegacaoTeclado = (numOpcoes, usarTeclado, numSelecionado, setNumSele
 
         if (event.key === 'ArrowDown') {
             setNumSelecionado((prevOption) => (prevOption + 1) % numOpcoes);
-            console.log('baixo', numSelecionado)
         }
 
         if (event.key === 'ArrowUp') {
             setNumSelecionado((prevOption) => (prevOption - 1 + numOpcoes) % numOpcoes);
-            console.log('cima', numSelecionado)
         }
 
         if (event.key === 'Enter') {

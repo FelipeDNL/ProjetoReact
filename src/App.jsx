@@ -40,16 +40,6 @@ function App() {
           />
 
           <Route
-            path='/projetos/python'
-            element={
-              <QuadroMostrar
-                opcaoSelecionada='projetos/python'
-                projetoSelecionado={projetoSelecionado}
-              />
-            }
-          />
-
-          <Route
             path='/projetos/java'
             element={
               <QuadroMostrar

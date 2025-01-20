@@ -4,7 +4,6 @@ import './QuadroOpcoes.css'
 
 import OpcoesProjetos from '../Opcoes/OpcoesProjetos'
 import OpcoesIniciais from '../Opcoes/OpcoesIniciais'
-import OpcoesProjetosPython from '../Opcoes/OpcoesProjetosPython'
 import OpcoesProjetosJava from '../Opcoes/OpcoesProjetosJava'
 
 function QuadroOpcoes({ setOpcaoSelecionada, setProjetoSelecionado }) {
@@ -13,7 +12,6 @@ function QuadroOpcoes({ setOpcaoSelecionada, setProjetoSelecionado }) {
     const opcoesMap ={
         '/': <OpcoesIniciais setOpcaoSelecionada={setOpcaoSelecionada} />,
         '/projetos': <OpcoesProjetos setProjetoSelecionado={setProjetoSelecionado} />,
-        '/projetos/python': <OpcoesProjetosPython setProjetoSelecionado={setProjetoSelecionado} />,
         '/projetos/java': <OpcoesProjetosJava setProjetoSelecionado={setProjetoSelecionado} />
     }
 

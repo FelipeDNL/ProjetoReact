@@ -9,9 +9,9 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
 
     const usarTeclado = (index) => {
         if (index === 0) {
-            setOpcaoSelecionada('bemVindo.html');
+            setOpcaoSelecionada('bemVindo');
         } else if (index === 1) {
-            setOpcaoSelecionada('sobre.html');
+            setOpcaoSelecionada('sobre');
         } else if (index === 2) {
             navigate('/projetos');
             setOpcaoSelecionada('projetos');
@@ -25,7 +25,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
         <div className='opcoes-iniciais'>
             <div
                 className={`op1 ${numSelecionado === 0 ? 'selected' : ''}`}
-                onClick={() => setOpcaoSelecionada('bemVindo.html')}
+                onClick={() => setOpcaoSelecionada('bemVindo')}
                 onMouseEnter={() => setNumSelecionado(0)}
             >
                 /bemVindo.html
@@ -33,7 +33,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
 
             <div
                 className={`op2 ${numSelecionado === 1 ? 'selected' : ''}`}
-                onClick={() => setOpcaoSelecionada('sobre.html')}
+                onClick={() => setOpcaoSelecionada('sobre')}
                 onMouseEnter={() => setNumSelecionado(1)}
             >
                 /sobreMim.html
@@ -45,7 +45,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
                     onClick={() => setOpcaoSelecionada('projetos')}
                     onMouseEnter={() => setNumSelecionado(2)}
                 >
-                    /meusProjetos
+                    /Projetos
                 </div>
             </Link>
         </div>
