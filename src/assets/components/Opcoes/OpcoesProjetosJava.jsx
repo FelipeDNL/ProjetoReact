@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function OpcoesProjetosJava({ setProjetoSelecionado }) {
     const navigate = useNavigate();
-    const [numSelecionado, setNumSelecionado] = useState(0);
+    const [numSelecionado, setNumSelecionado] = useState(-1);
 
     const usarTeclado = (index) => {
         if (index === 0) {

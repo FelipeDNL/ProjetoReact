@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Projetos({ projetoSelecionado }) {
-  projetoSelecionado ? console.log(projetoSelecionado) : console.log('Nenhum projeto selecionado')
 
   return (
     <div className='container-projetos'>

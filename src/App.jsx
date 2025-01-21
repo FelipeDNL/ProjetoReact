@@ -33,7 +33,7 @@ function App() {
             path='/projetos'
             element={
               <QuadroMostrar
-                opcaoSelecionada={opcaoSelecionada}
+                opcaoSelecionada='projetos'
                 projetoSelecionado={projetoSelecionado}
               />
             }

@@ -5,9 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function OpcoesProjetos({ setProjetoSelecionado }) {
     const navigate = useNavigate();
-    const [numSelecionado, setNumSelecionado] = useState(0);
+    const [numSelecionado, setNumSelecionado] = useState(-1);
+    const [indiceAtivo, setIndiceAtivo] = useState(null);
 
     const usarTeclado = (index) => {
+        setIndiceAtivo(index);
+        setTimeout(() => setIndiceAtivo(null), 50); // 50ms
+
         if (index === 0) {
             navigate(-1);
         } else if (index === 1) {
@@ -25,10 +29,10 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
     usarNavegacaoTeclado(4 + 1, usarTeclado, numSelecionado, setNumSelecionado);
 
     return (
-        <>
+        <div className='opcoes-projetos'>
             <Link to='/'>
                 <div
-                    className={`opVoltar ${numSelecionado === 0 ? 'selected' : ''}`}
+                    className={`opVoltar ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
                     onClick={() => setProjetoSelecionado('projeto1')}
                     onMouseEnter={() => setNumSelecionado(0)}
                 >
@@ -37,7 +41,7 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
             </Link>
 
             <div
-                className={`op1 ${numSelecionado === 1 ? 'selected' : ''}`}
+                className={`op1 ${numSelecionado === 1 ? 'selected' : ''} ${indiceAtivo === 1 ? 'active' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto1')}
                 onMouseEnter={() => setNumSelecionado(1)}
             >
@@ -45,7 +49,7 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
             </div>
 
             <div
-                className={`op2 ${numSelecionado === 2 ? 'selected' : ''}`}
+                className={`op2 ${numSelecionado === 2 ? 'selected' : ''} ${indiceAtivo === 2 ? 'active' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto2')}
                 onMouseEnter={() => setNumSelecionado(2)}
             >
@@ -53,22 +57,22 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
             </div>
 
             <div
-                className={`op3 ${numSelecionado === 3 ? 'selected' : ''}`}
+                className={`op3 ${numSelecionado === 3 ? 'selected' : ''} ${indiceAtivo === 3 ? 'active' : ''}`}
                 onClick={() => setProjetoSelecionado('projeto3')}
                 onMouseEnter={() => setNumSelecionado(3)}
             >
                 /projeto3.html
             </div>
-            
+
             <Link to='/projetos/java'>
                 <div
-                    className={`opJava ${numSelecionado === 4 ? 'selected' : ''}`}
+                    className={`opJava ${numSelecionado === 4 ? 'selected' : ''} ${indiceAtivo === 4 ? 'active' : ''}`}
                     onMouseEnter={() => setNumSelecionado(4)}
                 >
                     /java
                 </div>
             </Link>
-        </>
+        </div>
     )
 }
 

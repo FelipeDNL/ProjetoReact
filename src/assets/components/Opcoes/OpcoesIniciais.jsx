@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './OpcoesIniciais.css'
 import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado'
 
 function OpcoesIniciais({ setOpcaoSelecionada }) {
     const navigate = useNavigate();
-    const [numSelecionado, setNumSelecionado] = useState(0);
+    const [numSelecionado, setNumSelecionado] = useState(-1);
+    const [indiceAtivo, setIndiceAtivo] = useState(null);
 
     const usarTeclado = (index) => {
+        setIndiceAtivo(index);
+        setTimeout(() => setIndiceAtivo(null), 50); // 50ms
+
         if (index === 0) {
-            setOpcaoSelecionada('bemVindo');
+            setOpcaoSelecionada('bemVindo.html');
         } else if (index === 1) {
-            setOpcaoSelecionada('sobre');
+            setOpcaoSelecionada('sobre.html');
         } else if (index === 2) {
             navigate('/projetos');
             setOpcaoSelecionada('projetos');
@@ -24,16 +28,16 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
     return (
         <div className='opcoes-iniciais'>
             <div
-                className={`op1 ${numSelecionado === 0 ? 'selected' : ''}`}
-                onClick={() => setOpcaoSelecionada('bemVindo')}
+                className={`op1 ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
+                onClick={() => setOpcaoSelecionada('bemVindo.html')}
                 onMouseEnter={() => setNumSelecionado(0)}
             >
                 /bemVindo.html
             </div>
 
             <div
-                className={`op2 ${numSelecionado === 1 ? 'selected' : ''}`}
-                onClick={() => setOpcaoSelecionada('sobre')}
+                className={`op2 ${numSelecionado === 1 ? 'selected' : ''} ${indiceAtivo === 1 ? 'active' : ''}`}
+                onClick={() => setOpcaoSelecionada('sobre.html')}
                 onMouseEnter={() => setNumSelecionado(1)}
             >
                 /sobreMim.html
@@ -41,7 +45,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
 
             <Link to='/projetos'>
                 <div
-                    className={`op3 ${numSelecionado === 2 ? 'selected' : ''}`}
+                    className={`op3 ${numSelecionado === 2 ? 'selected' : ''} ${indiceAtivo === 2 ? 'active' : ''}`}
                     onClick={() => setOpcaoSelecionada('projetos')}
                     onMouseEnter={() => setNumSelecionado(2)}
                 >

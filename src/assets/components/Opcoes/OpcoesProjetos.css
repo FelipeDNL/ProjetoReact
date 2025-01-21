@@ -1,20 +1,7 @@
-.selected{
-    background-color: rgb(120, 120, 120);
+.opcoes-projetos .active {
+    background-color: rgb(163, 162, 162);
 }
 
-.voltar-projetos{
+.opJava {
     padding-left: 10px;
-}
-
-.opVoltar{
-    padding-left: 10px;
-}
-
-.opJava,
-.opPython{
-    padding-left: 10px;
-}
-
-.opVoltar:hover{
-    background-color: rgb(120, 120, 120);
 }
