@@ -1,8 +1,22 @@
-# React + Vite
+# felipednl.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site pessoal com projetos, curriculo e links relevantes. Estilizado com inpiração de antigos computadores ms-dos e windows cmd.
 
-Currently, two official plugins are available:
+Feito com framework react.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/user-attachments/assets/3faa4d0a-5a31-4cf0-8438-050cc064fab6)
+
+## Instalação
+
+1. Clone o repositório:
+    ```sh
+    git clone https://github.com/FelipeDNL/felipednl.github.io/
+    ```
+2. Navegue até o diretório do projeto:
+    ```sh
+    cd felipednl.github.io
+    ```
+3. Instale as dependências:
+    ```sh
+    npm install
+    ```
