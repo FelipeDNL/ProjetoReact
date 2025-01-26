@@ -2,7 +2,7 @@
 
 Site pessoal com projetos, curriculo e links relevantes. Estilizado com inpiração de antigos computadores ms-dos e windows cmd.
 
-Feito com framework react.
+Feito com framework React.
 
 ![image](https://github.com/user-attachments/assets/3faa4d0a-5a31-4cf0-8438-050cc064fab6)
 
