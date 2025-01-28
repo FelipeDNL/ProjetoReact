@@ -17,16 +17,16 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-.op1,
-.op2,
-.op3,
+a.underline {
+  text-decoration: underline;
+}
+
+.op,
 .opVoltar {
     padding-left: 10px;
 }
 
-.op1:hover,
-.op2:hover,
-.op3:hover,
+.op:hover,
 .opVoltar:hover {
     background-color: rgb(123, 123, 123);
     cursor: pointer;

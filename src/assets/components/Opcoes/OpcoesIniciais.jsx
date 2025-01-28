@@ -28,7 +28,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
     return (
         <div className='opcoes-iniciais'>
             <div
-                className={`op1 ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
+                className={`op ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
                 onClick={() => setOpcaoSelecionada('bemVindo.html')}
                 onMouseEnter={() => setNumSelecionado(0)}
             >
@@ -36,7 +36,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
             </div>
 
             <div
-                className={`op2 ${numSelecionado === 1 ? 'selected' : ''} ${indiceAtivo === 1 ? 'active' : ''}`}
+                className={`op ${numSelecionado === 1 ? 'selected' : ''} ${indiceAtivo === 1 ? 'active' : ''}`}
                 onClick={() => setOpcaoSelecionada('sobre.html')}
                 onMouseEnter={() => setNumSelecionado(1)}
             >
@@ -45,7 +45,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
 
             <Link to='/projetos'>
                 <div
-                    className={`op3 ${numSelecionado === 2 ? 'selected' : ''} ${indiceAtivo === 2 ? 'active' : ''}`}
+                    className={`op ${numSelecionado === 2 ? 'selected' : ''} ${indiceAtivo === 2 ? 'active' : ''}`}
                     onClick={() => setOpcaoSelecionada('projetos')}
                     onMouseEnter={() => setNumSelecionado(2)}
                 >

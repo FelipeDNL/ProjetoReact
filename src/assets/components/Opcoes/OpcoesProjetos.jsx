@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import './OpcoesProjetos.css'
 import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado';
 import { Link, useNavigate } from 'react-router-dom';
+import usarGithubOctoKitRepos from '../../../hooks/usarGithubOctoKitRepos';
 
 function OpcoesProjetos({ setProjetoSelecionado }) {
     const navigate = useNavigate();
     const [numSelecionado, setNumSelecionado] = useState(-1);
     const [indiceAtivo, setIndiceAtivo] = useState(null);
+
+    const { repos, loading, error } = usarGithubOctoKitRepos('FelipeDNL');
 
     const usarTeclado = (index) => {
         setIndiceAtivo(index);
@@ -14,19 +17,15 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
 
         if (index === 0) {
             navigate(-1);
-        } else if (index === 1) {
-            setProjetoSelecionado('projeto1');
-        } else if (index === 2) {
-            setProjetoSelecionado('projeto2');
-        } else if (index === 3) {
-            setProjetoSelecionado('projeto3');
-        } else if (index === 4) {
-            navigate('/projetos/java');
-            setProjetoSelecionado('java');
+        } else if (repos[index - 1]) {
+            setProjetoSelecionado(repos[index - 1].name);
         }
-    }
+    };
 
-    usarNavegacaoTeclado(4 + 1, usarTeclado, numSelecionado, setNumSelecionado);
+    usarNavegacaoTeclado(repos.length + 1, usarTeclado, numSelecionado, setNumSelecionado);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
     return (
         <div className='opcoes-projetos'>
@@ -40,38 +39,17 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
                 </div>
             </Link>
 
-            <div
-                className={`op1 ${numSelecionado === 1 ? 'selected' : ''} ${indiceAtivo === 1 ? 'active' : ''}`}
-                onClick={() => setProjetoSelecionado('projeto1')}
-                onMouseEnter={() => setNumSelecionado(1)}
-            >
-                /projeto1.html
-            </div>
-
-            <div
-                className={`op2 ${numSelecionado === 2 ? 'selected' : ''} ${indiceAtivo === 2 ? 'active' : ''}`}
-                onClick={() => setProjetoSelecionado('projeto2')}
-                onMouseEnter={() => setNumSelecionado(2)}
-            >
-                /projeto2.html
-            </div>
-
-            <div
-                className={`op3 ${numSelecionado === 3 ? 'selected' : ''} ${indiceAtivo === 3 ? 'active' : ''}`}
-                onClick={() => setProjetoSelecionado('projeto3')}
-                onMouseEnter={() => setNumSelecionado(3)}
-            >
-                /projeto3.html
-            </div>
-
-            <Link to='/projetos/java'>
+            {repos.map((repo, index) => (
                 <div
-                    className={`opJava ${numSelecionado === 4 ? 'selected' : ''} ${indiceAtivo === 4 ? 'active' : ''}`}
-                    onMouseEnter={() => setNumSelecionado(4)}
+                    key={repo.id}
+                    className={`op ${numSelecionado === index + 1 ? 'selected' : ''} ${indiceAtivo === index + 1 ? 'active' : ''}`}
+                    onClick={() => setProjetoSelecionado(repo.name)}
+                    onMouseEnter={() => setNumSelecionado(index + 1)}
                 >
-                    /java
+                    {repo.name}
                 </div>
-            </Link>
+            ))}
+
         </div>
     )
 }
