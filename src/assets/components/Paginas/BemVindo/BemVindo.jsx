@@ -15,7 +15,7 @@ function BemVindo() {
 
       <p>Caso você tenha um teclado disponível, também é possível usar as setas para cima e para baixo, assim como a tecla Enter para navegar no site (para uma imersão maior). </p>
 
-      <p>O repositório do github para esse projeto pode ser encontrado <a href='https://github.com/FelipeDNL/felipednl.github.io' target='_blank' className='underline'>clicando aqui</a>.</p>
+      <p>O repositório do github para esse site pode ser encontrado <a href='https://github.com/FelipeDNL/felipednl.github.io' target='_blank' className='underline'>clicando aqui</a>.</p>
     </div>
 
   )

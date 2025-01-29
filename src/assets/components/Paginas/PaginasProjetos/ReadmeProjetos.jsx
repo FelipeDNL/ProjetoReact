@@ -4,7 +4,7 @@ function ReadmeProjetos() {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <h1>-------PROJETOS-------</h1>
+        <h1>---PROJETOS---</h1>
       </div>
 
 

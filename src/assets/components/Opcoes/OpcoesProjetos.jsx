@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import './OpcoesProjetos.css'
+
 import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado';
 import usarGithubOctoKitRepos from '../../../hooks/usarGithubOctoKitRepos';
 
@@ -37,7 +38,7 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
             <Link to='/'>
                 <div
                     className={`opVoltar ${numSelecionado === -1 ? 'selected' : ''} ${indiceAtivo === -1 ? 'active' : ''}`}
-                    onClick={() => setProjetoSelecionado('...')}
+                    onClick={() => setProjetoSelecionado(undefined)}
                     onMouseEnter={() => setNumSelecionado(-1)}
                 >
                     ...<small>(voltar)</small>

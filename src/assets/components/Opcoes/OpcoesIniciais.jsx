@@ -46,7 +46,7 @@ function OpcoesIniciais({ setOpcaoSelecionada }) {
             <Link to='/projetos'>
                 <div
                     className={`op ${numSelecionado === 2 ? 'selected' : ''} ${indiceAtivo === 2 ? 'active' : ''}`}
-                    onClick={() => setOpcaoSelecionada('projetos')}
+                    onClick={() => setOpcaoSelecionada('')}
                     onMouseEnter={() => setNumSelecionado(2)}
                 >
                     /Projetos

@@ -35,18 +35,14 @@
     background: rgb(77, 77, 77);
 }
 
-@media (min-width: 320px) and (max-width: 769px) {
-
-    .quadro-mostrar{
-        flex: 3;
-        max-height: 700px;
-    }
+@media (min-width: 220px) and (max-width: 769px) {
 
     .mostrar {
         padding-left: 10px;
         padding-top: 5px;
         overflow: auto;
         word-wrap: break-word;
-        height: 95.9%;
+        height: 550px;
+        max-height: 590px;
     }
 }
