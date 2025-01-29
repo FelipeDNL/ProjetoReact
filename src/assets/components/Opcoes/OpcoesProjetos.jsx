@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import './OpcoesProjetos.css'
 import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado';
-import { Link, useNavigate } from 'react-router-dom';
 import usarGithubOctoKitRepos from '../../../hooks/usarGithubOctoKitRepos';
 
 function OpcoesProjetos({ setProjetoSelecionado }) {
@@ -9,13 +9,18 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
     const [numSelecionado, setNumSelecionado] = useState(-1);
     const [indiceAtivo, setIndiceAtivo] = useState(null);
 
-    const { repos, loading, error } = usarGithubOctoKitRepos('FelipeDNL');
+    // Importa as variáveis de ambiente do arquivo .env
+    // pode simplesmente substituir o valor de githubUsuario e githubToken por uma string;
+    const githubUsuario = import.meta.env.VITE_GITHUB_USUARIO;
+    const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+
+    const { repos, loading, error } = usarGithubOctoKitRepos(githubUsuario, githubToken);
 
     const usarTeclado = (index) => {
         setIndiceAtivo(index);
-        setTimeout(() => setIndiceAtivo(null), 50); // 50ms
+        setTimeout(() => setIndiceAtivo(null), 50); // 50ms para fazer a animação de seleção ao usar o teclado
 
-        if (index === 0) {
+        if (index === -1) {
             navigate(-1);
         } else if (repos[index - 1]) {
             setProjetoSelecionado(repos[index - 1].name);
@@ -31,13 +36,21 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
         <div className='opcoes-projetos'>
             <Link to='/'>
                 <div
-                    className={`opVoltar ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
-                    onClick={() => setProjetoSelecionado('projeto1')}
-                    onMouseEnter={() => setNumSelecionado(0)}
+                    className={`opVoltar ${numSelecionado === -1 ? 'selected' : ''} ${indiceAtivo === -1 ? 'active' : ''}`}
+                    onClick={() => setProjetoSelecionado('...')}
+                    onMouseEnter={() => setNumSelecionado(-1)}
                 >
                     ...<small>(voltar)</small>
                 </div>
             </Link>
+
+                <div
+                    className={`op ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
+                    onClick={() => setProjetoSelecionado('README.md')}
+                    onMouseEnter={() => setNumSelecionado(0)}
+                >
+                    /README.md
+                </div>
 
             {repos.map((repo, index) => (
                 <div
@@ -46,7 +59,7 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
                     onClick={() => setProjetoSelecionado(repo.name)}
                     onMouseEnter={() => setNumSelecionado(index + 1)}
                 >
-                    {repo.name}
+                    /{repo.name}
                 </div>
             ))}
 

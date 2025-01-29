@@ -1,27 +1,51 @@
-import React from 'react'
-import usarGithubOctoKitRepos from '../../../hooks/usarGithubOctoKitRepos';
+import React, { Suspense, lazy } from 'react'
+
+const Readme= lazy(() => import('../Paginas/PaginasProjetos/ReadmeProjetos'));
+const SitePessoal = lazy(() => import('../Paginas/PaginasProjetos/SitePessoal'));
+const AlgoritmosAestrela = lazy(() => import('../Paginas/PaginasProjetos/AlgoritmosAestrela'));
+const ChatCriptografado = lazy(() => import('../Paginas/PaginasProjetos/ChatCriptografado'));
+const FelipeDnl = lazy(() => import('../Paginas/PaginasProjetos/FelipeDnl'));
+const RestauranteNodeExpressMysql = lazy(() => import('../Paginas/PaginasProjetos/RestauranteNodeExpressMysql'));
+const RestauranteReact = lazy(() => import('../Paginas/PaginasProjetos/RestauranteReact'));
+const EmprestimosLivrosMysql = lazy(() => import('../Paginas/PaginasProjetos/EmprestimosLivrosMysql'));
+const LivrosReactNativeFirebase = lazy(() => import('../Paginas/PaginasProjetos/LivrosReactNativeFirebase'));
+const RepresentacaoKMeans = lazy(() => import('../Paginas/PaginasProjetos/RepresentacaoKMeans'));
+const SistemaBancarioNewbankPdf = lazy(() => import('../Paginas/PaginasProjetos/SistemaBancarioNewbankPdf'));
+const SistemaBancarioTestesUnitarios = lazy(() => import('../Paginas/PaginasProjetos/SistemaBancarioTestesUnitarios'));
+const TccSitePesquisasEnadePoscomp = lazy(() => import('../Paginas/PaginasProjetos/TccSitePesquisasEnadePoscomp'));
+const Felipednl_github_io = lazy(() => import('../Paginas/PaginasProjetos/Felipednl_github_io'));
 
 function Projetos({ projetoSelecionado }) {
 
-  const { repos, loading, error } = usarGithubOctoKitRepos('FelipeDNL');
+  const projetosMap = {
+    'README.md': <Readme />,
+    'site-pessoal-v1': <SitePessoal />,
+    'algoritmo-buscas-aprofundamento-iterativo-Aestrela': <AlgoritmosAestrela />,
+    'chat-multicast-criptografado': <ChatCriptografado />,
+    'felipednl': <FelipeDnl />,
+    'felipednl.github.io': <Felipednl_github_io />,
+    'gerenciador-restaurante-node-express-mysql': <RestauranteNodeExpressMysql />,
+    'gerenciador-restaurante-react': <RestauranteReact />,
+    'gerenciamento-emprestimos-livros-mysql': <EmprestimosLivrosMysql />,
+    'listagem-livros-react-native-firebase': <LivrosReactNativeFirebase />,
+    'representacao-kMeans': <RepresentacaoKMeans />,
+    'sistema-bancario-newbank-pdf': <SistemaBancarioNewbankPdf />,
+    'sistema-bancario-testes-unitarios': <SistemaBancarioTestesUnitarios />,
+    'tcc-site-pesquisas-enade-poscomp': <TccSitePesquisasEnadePoscomp />,
+  }
 
   return (
     <div className='container-projetos'>
+
       <div className='opcoes-projetos'>
-        {loading && <div>Loading...</div>}
-        {error && <div>Error: {error.message}</div>}
-        {repos.map((repo, index) => (
-          <div
-            key={repo.id}
-            className={`op ${projetoSelecionado === repo.name ? 'selected' : ''}`}
-          >
-            {repo.readme}
-          </div>
-        ))}
+
+        <Suspense fallback={<div>Loading...</div>}>
+          {projetosMap[projetoSelecionado] || <Readme />}
+        </Suspense>
+
       </div>
+
     </div>
-
-
   )
 }
 

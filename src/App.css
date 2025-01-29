@@ -22,19 +22,19 @@ a.underline {
 }
 
 .op,
+.op0,
 .opVoltar {
     padding-left: 10px;
 }
 
 .op:hover,
+.op0:hover,
 .opVoltar:hover {
     background-color: rgb(123, 123, 123);
     cursor: pointer;
 }
 
-.op1:active,
-.op2:active,
-.op3:active {
+.op:active {
     background-color: rgb(163, 162, 162);
 }
 

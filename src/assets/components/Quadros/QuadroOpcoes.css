@@ -32,6 +32,6 @@
     .quadro-opcoes{
         flex: 1;
         font-size: medium;
-        max-height: 240px;
+        min-height: 50px;
     }
 }

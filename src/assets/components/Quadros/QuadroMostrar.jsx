@@ -4,7 +4,6 @@ import './QuadroMostrar.css'
 import BemVindo from '../Paginas/BemVindo/BemVindo.jsx'
 import Sobre from '../Paginas/Sobre/Sobre.jsx'
 import Projetos from '../Projetos/Projetos.jsx'
-import ProjetosJava from '../Projetos/ProjetosJava.jsx'
 
 function QuadroMostrar({ opcaoSelecionada, projetoSelecionado }) {
 
@@ -12,7 +11,6 @@ function QuadroMostrar({ opcaoSelecionada, projetoSelecionado }) {
     'bemVindo.html': <BemVindo />,
     'sobre.html': <Sobre />,
     'projetos': <Projetos projetoSelecionado={projetoSelecionado} />,
-    'projetos/java': <ProjetosJava projetoSelecionado={projetoSelecionado} />,
   }
 
   //gambiarra pra concertar local-mostrar
