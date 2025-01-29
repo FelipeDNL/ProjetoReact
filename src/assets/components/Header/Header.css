@@ -4,11 +4,12 @@
     align-items: baseline;
     padding-left: 4%;
     padding-right: 4%;
+    margin-bottom: 2%;
 }
 
 .opcoes-header {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
