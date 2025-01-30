@@ -4,7 +4,6 @@ const Readme= lazy(() => import('../Paginas/PaginasProjetos/ReadmeProjetos'));
 const SitePessoal = lazy(() => import('../Paginas/PaginasProjetos/SitePessoal'));
 const AlgoritmosAestrela = lazy(() => import('../Paginas/PaginasProjetos/AlgoritmosAestrela'));
 const ChatCriptografado = lazy(() => import('../Paginas/PaginasProjetos/ChatCriptografado'));
-const FelipeDnl = lazy(() => import('../Paginas/PaginasProjetos/FelipeDnl'));
 const RestauranteNodeExpressMysql = lazy(() => import('../Paginas/PaginasProjetos/RestauranteNodeExpressMysql'));
 const RestauranteReact = lazy(() => import('../Paginas/PaginasProjetos/RestauranteReact'));
 const EmprestimosLivrosMysql = lazy(() => import('../Paginas/PaginasProjetos/EmprestimosLivrosMysql'));
@@ -22,7 +21,6 @@ function Projetos({ projetoSelecionado }) {
     'site-pessoal-v1': <SitePessoal />,
     'algoritmo-buscas-aprofundamento-iterativo-Aestrela': <AlgoritmosAestrela />,
     'chat-multicast-criptografado': <ChatCriptografado />,
-    'felipednl': <FelipeDnl />,
     'felipednl.github.io': <Felipednl_github_io />,
     'gerenciador-restaurante-node-express-mysql': <RestauranteNodeExpressMysql />,
     'gerenciador-restaurante-react': <RestauranteReact />,
