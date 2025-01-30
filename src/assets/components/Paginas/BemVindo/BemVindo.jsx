@@ -5,7 +5,7 @@ function BemVindo() {
     <div className='bem-vindo'>
       
       <div style={{ textAlign: 'center' }}>
-        <h1>--BEM VINDO :)--</h1>
+        <h1>--BEM-VINDO :)--</h1>
       </div>
 
 

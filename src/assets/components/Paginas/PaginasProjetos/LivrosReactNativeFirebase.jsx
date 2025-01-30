@@ -4,7 +4,7 @@ function LivrosReactNativeFirebase() {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h2>Listagem de Livros usando React Native e Firebase</h2>
+        <h2>Listagem de Livros Usando React Native e Firebase</h2>
       </div>
 
       <p>

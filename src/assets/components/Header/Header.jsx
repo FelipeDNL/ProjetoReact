@@ -9,7 +9,7 @@ function Header() {
         <div className='quadrado'></div>
       </h1>
       <div className='opcoes-header'>
-        <Link to='/' className='op-header'>[Meu Curriculo]</Link>
+        <Link className='op-header'>[Meu Currículo]</Link>
         <Link to='https://www.linkedin.com/in/felipednl/' className='op-header' target='_blank'>[LinkedIn]</Link>
         <Link to='/projetos' className='op-header'>[Projetos]</Link> 
         <Link to='https://github.com/FelipeDNL' className='op-header' target='_blank'>[GitHub]</Link>

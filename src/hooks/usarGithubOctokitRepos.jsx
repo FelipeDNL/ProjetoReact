@@ -18,11 +18,10 @@ function usarGithubOctokitRepos(username, token) {
           per_page: 100 // Número máximo de repositórios por página
         });
     
-        const repos = response.data;
-        repos.forEach(repo => {
-          console.log(repo.name);
-        });
-
+        let repos = response.data;
+        
+        repos = repos.filter(repo => repo.name !== 'felipednl' && repo.name !== 'treina-code-git');
+        
         setRepos(repos);
       } catch (error) {
         setError(error);

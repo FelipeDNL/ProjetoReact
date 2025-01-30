@@ -4,7 +4,7 @@ function RestauranteReact() {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h2>Gerenciador de mesas, pedidos e produtos para restaurante (esse é com React) </h2>
+        <h2>Gerenciador de Mesas, Pedidos e Produtos para Restaurante (esse é com React) </h2>
       </div>
 
       <p>

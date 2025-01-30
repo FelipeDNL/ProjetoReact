@@ -4,7 +4,7 @@ function RestauranteNodeExpressMysql() {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h2>Gerenciador de mesas, pedidos e produtos para restaurante </h2>
+        <h2>Gerenciador de Mesas, Pedidos e Produtos para Restaurante </h2>
       </div>
 
       <p>

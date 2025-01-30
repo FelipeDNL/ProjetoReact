@@ -4,7 +4,7 @@ function SistemaBancarioNewbankPdf() {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h2>Sistema bancario com extrato em PDF</h2>
+        <h2>Sistema Bancario com Extrato em PDF</h2>
       </div>
 
       <p>

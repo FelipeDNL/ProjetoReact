@@ -4,7 +4,7 @@ function EmprestimosLivrosMysql() {
     return (
         <>
             <div style={{ textAlign: 'center' }}>
-                <h2>Gerenciador de emprestimos de livros</h2>
+                <h2>Gerenciador de Emprestimos de Livros</h2>
             </div>
 
             <p>
