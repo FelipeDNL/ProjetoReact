@@ -12,10 +12,8 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
 
     // Importa as variáveis de ambiente do arquivo .env
     // pode simplesmente substituir o valor de githubUsuario e githubToken por uma string;
-    const githubUsuario = import.meta.env.VITE_GITHUB_USUARIO;
-    const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
 
-    const { repos, loading, error } = usarGithubOctoKitRepos(githubUsuario, githubToken);
+    const { repos, loading, error } = usarGithubOctoKitRepos('FelipeDNL');
 
     const usarTeclado = (index) => {
         setIndiceAtivo(index);

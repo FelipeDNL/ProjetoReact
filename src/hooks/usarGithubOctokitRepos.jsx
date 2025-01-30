@@ -8,7 +8,7 @@ function usarGithubOctokitRepos(username, token) {
 
   useEffect(() => {
     const octokit = new Octokit({
-      auth: token,
+      auth: import.meta.env.VITE_GITHUB_TOKEN,
     });
 
     const fetchRepos = async () => {
