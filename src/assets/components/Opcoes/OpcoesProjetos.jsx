@@ -7,11 +7,8 @@ import usarGithubOctoKitRepos from '../../../hooks/usarGithubOctoKitRepos';
 
 function OpcoesProjetos({ setProjetoSelecionado }) {
     const navigate = useNavigate();
-    const [numSelecionado, setNumSelecionado] = useState(-1);
+    const [numSelecionado, setNumSelecionado] = useState(0);
     const [indiceAtivo, setIndiceAtivo] = useState(null);
-
-    // Importa as variáveis de ambiente do arquivo .env
-    // pode simplesmente substituir o valor de githubUsuario e githubToken por uma string;
 
     const { repos, loading, error } = usarGithubOctoKitRepos('FelipeDNL');
 
@@ -19,10 +16,11 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
         setIndiceAtivo(index);
         setTimeout(() => setIndiceAtivo(null), 50); // 50ms para fazer a animação de seleção ao usar o teclado
 
+        // Verifica se o índice é -1, o que indica que o usuário deseja voltar
         if (index === -1) {
-            navigate(-1);
-        } else if (repos[index - 1]) {
-            setProjetoSelecionado(repos[index - 1].name);
+            navigate(-1); // Navega para a página anterior
+        } else if (repos[index - 1]) { // Verifica se existe um repositório no índice selecionado
+            setProjetoSelecionado(repos[index - 1].name); // Define o projeto selecionado com o nome do repositório correspondente
         }
     };
 
@@ -43,13 +41,13 @@ function OpcoesProjetos({ setProjetoSelecionado }) {
                 </div>
             </Link>
 
-                <div
-                    className={`op ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
-                    onClick={() => setProjetoSelecionado('README.md')}
-                    onMouseEnter={() => setNumSelecionado(0)}
-                >
-                    /README.md
-                </div>
+            <div
+                className={`op ${numSelecionado === 0 ? 'selected' : ''} ${indiceAtivo === 0 ? 'active' : ''}`}
+                onClick={() => setProjetoSelecionado('README.md')}
+                onMouseEnter={() => setNumSelecionado(0)}
+            >
+                /README.md
+            </div>
 
             {repos.map((repo, index) => (
                 <div

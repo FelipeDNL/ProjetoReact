@@ -5,12 +5,12 @@ import usarNavegacaoTeclado from '../../../hooks/usarNavegacaoTeclado'
 
 function OpcoesIniciais({ setOpcaoSelecionada }) {
     const navigate = useNavigate();
-    const [numSelecionado, setNumSelecionado] = useState(-1);
+    const [numSelecionado, setNumSelecionado] = useState(0);
     const [indiceAtivo, setIndiceAtivo] = useState(null);
 
     const usarTeclado = (index) => {
         setIndiceAtivo(index);
-        setTimeout(() => setIndiceAtivo(null), 50); // 50ms
+        setTimeout(() => setIndiceAtivo(null), 50); // 50ms para fazer a animação de seleção ao usar o teclado
 
         if (index === 0) {
             setOpcaoSelecionada('bemVindo.html');
